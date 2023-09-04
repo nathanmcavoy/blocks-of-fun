@@ -1,7 +1,8 @@
 import * as Blockly from 'blockly/core';
 import { CustomConstantProvider } from './constants';
+import { CustomRenderInfo } from './renderInfo';
 
-class CustomRenderer extends Blockly.blockRendering.Renderer {
+export class CustomRenderer extends Blockly.blockRendering.Renderer {
   constructor() {
     //@ts-ignore
     super();
@@ -9,6 +10,10 @@ class CustomRenderer extends Blockly.blockRendering.Renderer {
 
   protected makeConstants_(): Blockly.blockRendering.ConstantProvider {
       return new CustomConstantProvider();
+  }
+
+  protected makeRenderInfo_(block: Blockly.BlockSvg): Blockly.blockRendering.RenderInfo {
+      return new CustomRenderInfo(this, block);
   }
 }
 
