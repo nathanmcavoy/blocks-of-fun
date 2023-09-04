@@ -1,0 +1,100 @@
+[
+  {
+    "type": "function_definition",
+    "message0": "defining %1 %2 with %3",
+    "args0": [
+      {
+        "type": "field_input",
+        "name": "NAME"
+      },
+      {
+        "type": "input_value",
+        "name": "ARGUMENTS"
+      },
+      {
+        "type": "input_value",
+        "name": "BODY"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null
+  },
+  {
+    "type": "function_argument",
+    "message0": "arg %1",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "NEXT"
+      }
+    ],
+    "output": "VAR"
+  },
+  {
+    "type": "brackets",
+    "message0": "(%1) %2",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "INTERNAL"
+      },
+      {
+        "type": "input_value",
+        "name": "NEXT"
+      }
+    ],
+    "inputsInline": true,
+    "output": "VAR"
+  },
+  {
+    "type": "if",
+    "message0": "if %1 then %2 else %3",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "BOOLEAN"
+      },
+      {
+        "type": "input_value",
+        "name": "IF"
+      },
+      {
+        "type": "input_value",
+        "name": "ELSE"
+      }
+    ],
+    "output": "VAR"
+  },
+  {
+    "type": "where",
+    "message0": "%1 where %2",
+    "args0": [
+      {
+        "type": "input_statement",
+        "name": "EXTERNAL"
+      },
+      {
+        "type": "input_statement",
+        "name": "INTERNAL"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null
+  },
+  {
+    "type": "let",
+    "message0": "let %1 in %2",
+    "args0": [
+      {
+        "type": "input_statement",
+        "name": "LET"
+      },
+      {
+        "type": "input_statement",
+        "name": "IN"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null
+  }
+]
