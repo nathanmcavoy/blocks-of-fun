@@ -3,11 +3,14 @@ import Blockly from 'blockly';
 export const haskellGenerator = new Blockly.Generator('Haskell');
 
 haskellGenerator.forBlock["function_definition"] = (block, generator) => {
-  return `${block.getFieldValue("NAME")} ${generator.valueToCode(block, "ARGUMENTS", 0)} = ${generator.valueToCode(block, "BODY", 0)}`
+  return `${block.getFieldValue("NAME")} ${generator.valueToCode(block, "ARGUMENTS", 0)}= ${generator.valueToCode(block, "BODY", 0)}`
 }
 
 haskellGenerator.forBlock["function_argument"] = (block, generator) => {
-  return [`name ${generator.valueToCode(block, "NEXT", 0)}`, 0]
+  return [`${block.getFieldValue("NAME")} ${generator.valueToCode(block, "NEXT", 0)}`, 0]
+}
+haskellGenerator.forBlock["apply"] = (block, generator) => {
+  return [`func ${generator.valueToCode(block, "NEXT", 0)}`, 0]
 }
 
 haskellGenerator.forBlock["brackets"] = (block, generator) => {

@@ -9,11 +9,13 @@
       },
       {
         "type": "input_value",
-        "name": "ARGUMENTS"
+        "name": "ARGUMENTS",
+        "check": ["name_intro"]
       },
       {
         "type": "input_value",
-        "name": "BODY"
+        "name": "BODY",
+        "check": ["call"]
       }
     ],
     "previousStatement": null,
@@ -21,14 +23,29 @@
   },
   {
     "type": "function_argument",
-    "message0": "arg %1",
+    "message0": "%1 %2",
     "args0": [
       {
+        "type": "field_input",
+        "name": "NAME"
+      },
+      {
         "type": "input_value",
-        "name": "NEXT"
+        "name": "NEXT",
+        "check": ["name_intro"]
       }
     ],
-    "output": "VAR"
+    "output": "name_intro"
+  },
+  {
+    "type": "apply",
+    "message0": "func %1",
+    "args0": [{
+      "type": "input_value",
+      "name": "NEXT",
+      "check": ["use"]
+    }],
+    "output": "call"
   },
   {
     "type": "brackets",
@@ -36,15 +53,17 @@
     "args0": [
       {
         "type": "input_value",
-        "name": "INTERNAL"
+        "name": "INTERNAL",
+        "check": ["call"]
       },
       {
         "type": "input_value",
-        "name": "NEXT"
+        "name": "NEXT",
+        "check": ["name_intro"]
       }
     ],
     "inputsInline": true,
-    "output": "VAR"
+    "output": "use"
   },
   {
     "type": "if",
@@ -52,18 +71,21 @@
     "args0": [
       {
         "type": "input_value",
-        "name": "BOOLEAN"
+        "name": "BOOLEAN",
+        "check": ["call"]
       },
       {
         "type": "input_value",
-        "name": "IF"
+        "name": "IF",
+        "check": ["call"]
       },
       {
         "type": "input_value",
-        "name": "ELSE"
+        "name": "ELSE",
+        "check": ["call"]
       }
     ],
-    "output": "VAR"
+    "output": "call"
   },
   {
     "type": "where",
