@@ -1,0 +1,51 @@
+{
+    "kind": "categoryToolbox",
+    "contents": [
+        {
+            "kind": "category",
+            "name": "Defining functions",
+            "contents": [
+                {
+                    "kind": "block",
+                    "type": "function_definition"
+                },
+                {
+                    "kind": "block",
+                    "type": "function_argument"
+                },
+                {
+                    "kind": "block",
+                    "type": "let"
+                },
+                {
+                    "kind": "block",
+                    "type": "where"
+                }
+            ]
+        },
+        {
+            "kind": "category",
+            "name": "Using functions",
+            "contents": [
+                {
+                    "kind": "block",
+                    "type": "apply"
+                },
+                {
+                    "kind": "block",
+                    "type": "brackets"
+                }
+            ]
+        },
+        {
+            "kind": "category",
+            "name": "Logic",
+            "contents": [
+                {
+                    "kind": "block",
+                    "type": "if"
+                }
+            ]
+        }
+    ]
+}

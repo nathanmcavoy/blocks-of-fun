@@ -1,15 +1,12 @@
 import * as Blockly from 'blockly';
 import { haskellGenerator } from './generators/haskell';
+import { load, save } from './serialisation';
 import './renderers/custom';
 import blocks from './blocks.json';
+import toolbox from './toolbox.json';
 import '../index.scss';
 
 Blockly.defineBlocksWithJsonArray(blocks);
-
-const toolbox = {
-  "kind": "flyoutToolbox",
-  "contents": blocks.map(block => ({kind: "block", type: block.type}))
-}
 
 // inject blockly
 const codeDiv = document.getElementById('generatedCode').firstChild as HTMLElement;
@@ -49,11 +46,12 @@ const runCode = () => {
   codeDiv.innerText = code;
 
   outputDiv.innerHTML = '';
-
+  save(ws);
   // eval(code);
 };
 
 // Load the initial state from storage and run the code.
+load(ws);
 runCode();
 
 // Every time the workspace changes state, save the changes to storage.
