@@ -59,7 +59,7 @@
       {
         "type": "input_value",
         "name": "NEXT",
-        "check": ["name_intro"]
+        "check": ["use"]
       }
     ],
     "inputsInline": true,
